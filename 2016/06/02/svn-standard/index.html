@@ -98,7 +98,7 @@
 最好是一个项目一个Svn库
 
 1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
-<meta property="og:updated_time" content="2016-06-02T06:08:11.000Z">
+<meta property="og:updated_time" content="2016-06-02T06:28:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="svn规范">
 <meta name="twitter:description" content="Svn目录规划svn目录结构如下
@@ -354,7 +354,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Svn库</span><br><span class="line">│-tags(发布)  </span><br><span class="line"></span><br><span class="line">│ │-release_1.0(copy from trunk)</span><br><span class="line"></span><br><span class="line">│ │-bugfix_release_1.0</span><br><span class="line"></span><br><span class="line">│-trunk(主版本)</span><br><span class="line"></span><br><span class="line">│ │-项目文件</span><br><span class="line"></span><br><span class="line">│-branches(分支)</span><br><span class="line"></span><br><span class="line">│ │-bugfix_1.0(copy from tags/release_1.0)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
-<li>开发完毕，代码冻结,基于已经冻结的trunk，为release_1.0打tag,trunk继续新版本开发。</li>
+<li>开发完毕，代码冻结，基于已经冻结的trunk，为release_1.0打tag，trunk继续新版本开发。</li>
 <li>如果发现1.0有bug，需要修改，则基于release_1.0的tag做branch。</li>
 <li>在branch进行bugfix_1.0 bug修复，当bug修复完成基于bugfix_1.0做bugfix_release_1.0。</li>
 <li>根据需要选择性的把bugfix_1.0这个分支merge回trunk。</li>
@@ -379,6 +379,11 @@
 <li>+表示增加文件或功能</li>
 <li>-表示删除文件或功能</li>
 <li>b表示修正了具体的某个bug</li>
+</ul>
+<h1 id="在线手册"><a href="#在线手册" class="headerlink" title="在线手册"></a>在线手册</h1><ul>
+<li>服务端<a href="http://svndoc.iusesvn.com/svnbook/1.4/" target="_blank" rel="external">Subversion中文手册</a></li>
+<li>windows客户端<a href="http://svndoc.iusesvn.com/tsvn/1.5/" target="_blank" rel="external">TortoiseSVN中文手册</a></li>
+<li>Mac客户端<a href="http://www.zennaware.com/cornerstone/" target="_blank" rel="external">Cornerstone官网</a></li>
 </ul>
 
       
@@ -572,7 +577,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn目录规划"><span class="nav-number">1.</span> <span class="nav-text">Svn目录规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn使用规范"><span class="nav-number">2.</span> <span class="nav-text">Svn使用规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日常更新"><span class="nav-number">2.1.</span> <span class="nav-text">日常更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释提交说明"><span class="nav-number">2.2.</span> <span class="nav-text">注释提交说明</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn目录规划"><span class="nav-number">1.</span> <span class="nav-text">Svn目录规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn使用规范"><span class="nav-number">2.</span> <span class="nav-text">Svn使用规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日常更新"><span class="nav-number">2.1.</span> <span class="nav-text">日常更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释提交说明"><span class="nav-number">2.2.</span> <span class="nav-text">注释提交说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在线手册"><span class="nav-number">3.</span> <span class="nav-text">在线手册</span></a></li></ol></div>
             
           </div>
         </section>
