@@ -19,6 +19,7 @@
 <li>根据需要选择性的把bugfix_1.0这个分支merge回trunk。</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <h1 id="Svn使用规范"><a href="#Svn使用规范" class="headerlink" title="Svn使用规范"></a>Svn使用规范</h1><h2 id="日常更新"><a href="#日常更新" class="headerlink" title="日常更新"></a>日常更新</h2><p>在Svn的日常更新中做到如下要求：</p>
 <ul>
 <li>每日进行开发工作之前必须更新代码，下班时提交代码。</li>
