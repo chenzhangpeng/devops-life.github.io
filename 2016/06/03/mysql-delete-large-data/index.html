@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="运维•开发•生活">
 <meta property="og:description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657mysql&amp;gt; help delete;Name: &amp;apos;DELETE&amp;apos;Desc">
-<meta property="og:updated_time" content="2016-06-03T07:14:46.000Z">
+<meta property="og:updated_time" content="2016-06-03T07:23:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql删除大量数据">
 <meta name="twitter:description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
@@ -365,7 +365,7 @@
 <h1 id="删除大量数据注意事项"><a href="#删除大量数据注意事项" class="headerlink" title="删除大量数据注意事项"></a>删除大量数据注意事项</h1><p>在生产环境中，删除大量数据，会消耗太多的IO资源，会造成一些不良现象主从延时、数据文件无法收缩、锁表等。做大量数据删除时，请注意以下事项：</p>
 <ol>
 <li><strong>批量删除</strong>，这样往往可以工作得更快，你可能需要在每次批量删除前sleep一段时间，控制删除的频率，这样的目的是减少对生产系统的IO冲击，把符合平均分布，避免从库滞后太多；</li>
-<li>按照<strong>主键</strong>的序列分批分批，或者基于时间分批分批。</li>
+<li>按照<strong>主键</strong>的序列分批分次，或者基于时间分批分次。</li>
 <li>基于硬件的性能，每批删除的记录数，可以选择几百到几千到几万的数据量，但不要太大，MySQL很难同时处理好大事务和随机小事务；</li>
 <li>如果要删除大部分数据，那么可以考虑的方式是，创建一个新表，insert要保留的数据，然后切换表；</li>
 <li>对于大表(InnoDB)删除大量数据，如果是一个很大的事务，中止删除数据的操作，可能需要几倍的时间用于回滚，导致严重的IO瓶颈，而批量删除可以让我们的回滚恢复得快得多。</li>
