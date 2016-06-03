@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://devops-life.github.io/markdown-syntax.html</loc>
+    
+    <lastmod>2016-06-03T10:30:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://devops-life.github.io/yaml-syntax.html</loc>
     
-    <lastmod>2016-06-03T10:12:05.000Z</lastmod>
+    <lastmod>2016-06-03T10:26:03.000Z</lastmod>
     
   </url>
   

@@ -1,0 +1,2023 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Markdown," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Markdown 由 John Gruber 于 2004年创立. 它旨在成为一门容易读写的语法结构，并可以便利地转换成 HTML（以及其他很多）格式。
+
+
+
+
+
+这是一个 这是一个 这是一个 这是一个 这是一个 这是一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown语法">
+<meta property="og:url" content="http://devops-life.github.io/markdown-syntax.html">
+<meta property="og:site_name" content="运维•开发•生活">
+<meta property="og:description" content="Markdown 由 John Gruber 于 2004年创立. 它旨在成为一门容易读写的语法结构，并可以便利地转换成 HTML（以及其他很多）格式。
+
+
+
+
+
+这是一个 这是一个 这是一个 这是一个 这是一个 这是一个">
+<meta property="og:image" content="http://imgur.com/myimage.jpg">
+<meta property="og:image" content="http://devops-life.github.io/relative/urls/cool/image.jpg">
+<meta property="og:updated_time" content="2016-06-03T10:30:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown语法">
+<meta name="twitter:description" content="Markdown 由 John Gruber 于 2004年创立. 它旨在成为一门容易读写的语法结构，并可以便利地转换成 HTML（以及其他很多）格式。
+
+
+
+
+
+这是一个 这是一个 这是一个 这是一个 这是一个 这是一个">
+<meta name="twitter:image" content="http://imgur.com/myimage.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Markdown语法 | 运维•开发•生活 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">运维•开发•生活</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', '1NHsuqoaW-JxQU2eXm-3','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Markdown语法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-03T18:28:33+08:00" content="2016-06-03">
+              2016-06-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/语法/" itemprop="url" rel="index">
+                    <span itemprop="name">语法</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/markdown-syntax.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="markdown-syntax.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/markdown-syntax.html" class="leancloud_visitors" data-flag-title="Markdown语法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>Markdown 由 John Gruber 于 2004年创立. 它旨在成为一门容易读写的语法结构，并可以便利地转换成 HTML（以及其他很多）格式。</p>
+</blockquote>
+<!-- Markdown 是 HTML 的父集，所以任何 HTML 文件都是有效的 Markdown。
+这意味着我们可以在 Markdown 里使用任何 HTML 元素，比如注释元素，
+且不会被 Markdown 解析器所影响。不过如果你在 Markdown 文件内创建了 HTML 元素，
+你将无法在 HTML 元素的内容中使用 Markdown 语法。-->
+<!-- 在不同的解析器中，Markdown 的实现方法有所不同。
+此教程会指出当某功能是否通用及是否只对某一解析器有效。 -->
+<!-- 标头 -->
+<!-- 通过在文本前加上不同数量的hash(#), 你可以创建相对应的 <h1> 
+到 <h6> HTML元素。-->
+<h1 id="这是一个"><a href="#这是一个" class="headerlink" title="这是一个 "></a>这是一个 <h1></h1><h2 id="这是一个-1"><a href="#这是一个-1" class="headerlink" title="这是一个 "></a>这是一个 <h2></h2><h3 id="这是一个-2"><a href="#这是一个-2" class="headerlink" title="这是一个 "></a>这是一个 <h3></h3><h4 id="这是一个-3"><a href="#这是一个-3" class="headerlink" title="这是一个 "></a>这是一个 <h4></h4><h5 id="这是一个-4"><a href="#这是一个-4" class="headerlink" title="这是一个 "></a>这是一个 <h5></h5><h6 id="这是一个-5"><a href="#这是一个-5" class="headerlink" title="这是一个 "></a>这是一个 <h6></h6><a id="more"></a>
+<!-- 对于 <h1> 和 <h2> 元素，Markdown 额外提供了两种添加方式。 -->
+<h1 id="这是一个-h1"><a href="#这是一个-h1" class="headerlink" title="这是一个 h1"></a>这是一个 h1</h1><h2 id="这是一个-h2"><a href="#这是一个-h2" class="headerlink" title="这是一个 h2"></a>这是一个 h2</h2><!-- 简易文本样式 -->
+<!-- 文本的斜体，粗体，和删除线在 Markdown 中可以轻易地被实现。-->
+<p><em>此文本为斜体。</em><br><em>此文本也是。</em></p>
+<p><strong>此文本为粗体。</strong><br><strong>此文本也是</strong></p>
+<p><strong><em>此文本是斜体加粗体。</em></strong><br><strong><em>或者这样。</em></strong><br><em><strong>这个也是！</strong></em></p>
+<!-- 在 GitHub 采用的 Markdown 中 -->
+<p><del>此文本为删除线效果。</del></p>
+<!-- 单个段落由一句或多句邻近的句子组成，这些句子由一个或多个空格分隔。-->
+<p>这是第一段落. 这句话在同一个段落里，好玩么？</p>
+<p>现在我是第二段落。<br>这句话也在第二段落！</p>
+<p>这句话在第三段落！</p>
+<!-- 如果你插入一个 HTML中的<br />标签，你可以在段末加入两个以上的空格，
+然后另起一段。-->
+<p>此段落结尾有两个空格（选中以显示）。  </p>
+<p>上文有一个 <br> ！</p>
+<!-- 段落引用可由 > 字符轻松实现。-->
+<blockquote>
+<p>这是一个段落引用. 你可以<br>手动断开你的句子，然后在每句句子前面添加 “&gt;” 字符。或者让你的句子变得很长，以至于他们自动得断开。<br>只要你的文字以“&gt;” 字符开头，两种方式无异。</p>
+<p>你也对文本进行</p>
+<blockquote>
+<p>多层引用<br>这多机智啊！</p>
+</blockquote>
+</blockquote>
+<!-- 序列 -->
+<!-- 无序序列可由星号，加号或者减号来建立 -->
+<ul>
+<li>项目</li>
+<li>项目</li>
+<li>另一个项目</li>
+</ul>
+<p>或者</p>
+<ul>
+<li>项目</li>
+<li>项目</li>
+<li>另一个项目</li>
+</ul>
+<p>或者 </p>
+<ul>
+<li>项目</li>
+<li>项目</li>
+<li>最后一个项目</li>
+</ul>
+<!-- 有序序列可由数字加点来实现 -->
+<ol>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三</li>
+</ol>
+<!-- 即使你的标签数字有误，Markdown 依旧会呈现出正确的序号，
+不过这并不是一个好主意-->
+<ol>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三<!-- (此段与前例一模一样) -->
+</li>
+</ol>
+<!-- 你也可以使用子序列 -->
+<ol>
+<li>项目一</li>
+<li>项目二</li>
+<li>项目三<ul>
+<li>子项目</li>
+<li>子项目</li>
+</ul>
+</li>
+<li>项目四</li>
+</ol>
+<!-- 代码段落 -->
+<!-- 代码段落（HTML中 <code>标签）可以由缩进四格（spaces）
+或者一个制表符（tab）实现-->
+<pre><code>This is code
+So is this
+</code></pre><!-- 在你的代码中，你仍然使用tab可以进行缩进操作 -->
+<pre><code>my_array.each do |item|
+    puts item
+end
+</code></pre><!-- 内联代码可由反引号 ` 实现 -->
+<p>John 甚至不知道 <code>go_to()</code> 方程是干嘛的!</p>
+<!-- 在GitHub的 Markdown中，对于代码你可以使用特殊的语法 -->
+<p>```ruby <!-- 插入时记得移除反斜线， 仅留ruby ！ --><br>def foobar<br>    puts “Hello world!”<br>end<br>``` <!-- 这里也是，移除反斜线，仅留  --></p>
+<!-- 以上代码不需要缩进，而且 GitHub 会根据后表明的语言来进行语法高亮 -->
+<!-- 水平线 （<hr />） -->
+<!-- 水平线可由三个或以上的星号或者减号创建，可带可不带空格。 -->
+<h2 id=""><a href="#" class="headerlink" title="*"></a><em>*</em></h2><hr>
+<hr>
+<!-- 链接 -->
+<!-- Markdown 最棒的地方就是简易的链接制作。链接文字放在中括号[]内，
+在随后的括弧()内加入url。-->
+<p><a href="http://test.com/" target="_blank" rel="external">点我点我!</a></p>
+<!-- 你也可以为链接加入一个标题：在括弧内使用引号 -->
+<p><a href="http://test.com/" title="连接到Test.com" target="_blank" rel="external">点我点我!</a></p>
+<!-- 相对路径也可以有 -->
+<p><a href="/music/">去 music</a>.</p>
+<!-- Markdown同样支持引用样式的链接 -->
+<p><a href="http://test.com/" title="Cool!" target="_blank" rel="external">点此链接</a>以获取更多信息！<br><a href="http://foobar.biz/" title="Alright!" target="_blank" rel="external">看一看这个链接</a> 如果你愿意的话.</p>
+<!-- 链接的标题可以处于单引号中，括弧中或是被忽略。引用名可以在文档的任意何处，
+并且可以随意命名，只要名称不重复。-->
+<!-- “隐含式命名” 的功能可以让链接文字作为引用名 -->
+<p><a href="http://thisisalink.com/" target="_blank" rel="external">This</a> is a link.</p>
+<!-- 但这并不常用 -->
+<!-- 图像 -->
+<!-- 图像与链接相似，只需在前添加一个感叹号 -->
+<p><img src="http://imgur.com/myimage.jpg" alt="这是我图像的悬停文本(alt text)" title="可选命名"></p>
+<!-- 引用样式也同样起作用 -->
+<p><img src="relative/urls/cool/image.jpg" alt="这是我的悬停文本." title="在此输入标题"></p>
+<!-- 杂项 -->
+<!-- 自动链接 -->
+<p><a href="http://testwebsite.com/" target="_blank" rel="external">http://testwebsite.com/</a> 与<br><a href="http://testwebsite.com/" target="_blank" rel="external">http://testwebsite.com/</a> 等同</p>
+<!-- 电子邮件的自动链接 -->
+<p><a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#102;&#x6f;&#x6f;&#x40;&#98;&#97;&#114;&#x2e;&#99;&#111;&#x6d;">&#102;&#x6f;&#x6f;&#x40;&#98;&#97;&#114;&#x2e;&#99;&#111;&#x6d;</a></p>
+<!-- 转义字符 -->
+<p>我希望 <em>将这段文字置于星号之间</em> 但是我不希望它被<br>斜体化, 所以我就: *这段置文字于星号之间*。</p>
+<!-- 表格 -->
+<!-- 表格只被 GitHub 的 Markdown 支持，并且有一点笨重，但如果你真的要用的话: -->
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一列</th>
+<th style="text-align:center">第二列</th>
+<th style="text-align:right">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居个中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:left">某某某</td>
+<td style="text-align:center">某某某</td>
+<td style="text-align:right">某某某</td>
+</tr>
+</tbody>
+</table>
+<!-- 或者, 同样的 -->
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一列</th>
+<th style="text-align:center">第二列</th>
+<th style="text-align:right">第三列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">这太丑了</td>
+<td style="text-align:center">药不能</td>
+<td style="text-align:right">停</td>
+</tr>
+</tbody>
+</table>
+<!-- 结束! -->
+</h6></h5></h4></h3></h2></h1>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Chen Zhangpeng WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/yaml-syntax.html" rel="next" title="Yaml语法">
+                <i class="fa fa-chevron-left"></i> Yaml语法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="markdown-syntax.html"
+           data-title="Markdown语法" data-url="http://devops-life.github.io/markdown-syntax.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww3.sinaimg.cn/large/9e2b2ccdgw1f4eri0cbm2j208c08cglj.jpg"
+               alt="Chen Zhangpeng" />
+          <p class="site-author-name" itemprop="name">Chen Zhangpeng</p>
+          <p class="site-description motion-element" itemprop="description">努力未必成功.但放弃必定失败</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/devops-life" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/Learningtime" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这是一个"><span class="nav-number">1.</span> <span class="nav-text">这是一个 这是一个 这是一个 这是一个 这是一个 这是一个 
+
+这是一个 h1这是一个 h2
+
+此文本为斜体。此文本也是。
+此文本为粗体。此文本也是
+此文本是斜体加粗体。或者这样。这个也是！
+
+此文本为删除线效果。
+
+这是第一段落. 这句话在同一个段落里，好玩么？
+现在我是第二段落。这句话也在第二段落！
+这句话在第三段落！
+
+此段落结尾有两个空格（选中以显示）。  
+上文有一个  ！
+
+
+这是一个段落引用. 你可以手动断开你的句子，然后在每句句子前面添加 “>” 字符。或者让你的句子变得很长，以至于他们自动得断开。只要你的文字以“>” 字符开头，两种方式无异。
+你也对文本进行
+
+多层引用这多机智啊！
+
+
+
+
+
+项目
+项目
+另一个项目
+
+或者
+
+项目
+项目
+另一个项目
+
+或者 
+
+项目
+项目
+最后一个项目
+
+
+
+项目一
+项目二
+项目三
+
+
+
+项目一
+项目二
+项目三
+
+
+
+
+项目一
+项目二
+项目三
+子项目
+子项目
+
+
+项目四
+
+
+
+This is code
+So is this
+
+my_array.each do |item|
+    puts item
+end
+
+John 甚至不知道 go_to() 方程是干嘛的!
+
+```ruby def foobar    puts “Hello world!”end``` 
+
+
+
+*
+
+
+
+点我点我!
+
+点我点我!
+
+去 music.
+
+点此链接以获取更多信息！看一看这个链接 如果你愿意的话.
+
+
+This is a link.
+
+
+
+
+
+
+
+
+http://testwebsite.com/ 与http://testwebsite.com/ 等同
+
+foo@bar.com
+
+我希望 将这段文字置于星号之间 但是我不希望它被斜体化, 所以我就: *这段置文字于星号之间*。
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+左对齐
+居个中
+右对齐
+
+
+某某某
+某某某
+某某某
+
+
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+这太丑了
+药不能
+停
+
+
+
+
+</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这是一个-1"><span class="nav-number">2.1.</span> <span class="nav-text">这是一个 这是一个 这是一个 这是一个 这是一个 
+
+这是一个 h1这是一个 h2
+
+此文本为斜体。此文本也是。
+此文本为粗体。此文本也是
+此文本是斜体加粗体。或者这样。这个也是！
+
+此文本为删除线效果。
+
+这是第一段落. 这句话在同一个段落里，好玩么？
+现在我是第二段落。这句话也在第二段落！
+这句话在第三段落！
+
+此段落结尾有两个空格（选中以显示）。  
+上文有一个  ！
+
+
+这是一个段落引用. 你可以手动断开你的句子，然后在每句句子前面添加 “>” 字符。或者让你的句子变得很长，以至于他们自动得断开。只要你的文字以“>” 字符开头，两种方式无异。
+你也对文本进行
+
+多层引用这多机智啊！
+
+
+
+
+
+项目
+项目
+另一个项目
+
+或者
+
+项目
+项目
+另一个项目
+
+或者 
+
+项目
+项目
+最后一个项目
+
+
+
+项目一
+项目二
+项目三
+
+
+
+项目一
+项目二
+项目三
+
+
+
+
+项目一
+项目二
+项目三
+子项目
+子项目
+
+
+项目四
+
+
+
+This is code
+So is this
+
+my_array.each do |item|
+    puts item
+end
+
+John 甚至不知道 go_to() 方程是干嘛的!
+
+```ruby def foobar    puts “Hello world!”end``` 
+
+
+
+*
+
+
+
+点我点我!
+
+点我点我!
+
+去 music.
+
+点此链接以获取更多信息！看一看这个链接 如果你愿意的话.
+
+
+This is a link.
+
+
+
+
+
+
+
+
+http://testwebsite.com/ 与http://testwebsite.com/ 等同
+
+foo@bar.com
+
+我希望 将这段文字置于星号之间 但是我不希望它被斜体化, 所以我就: *这段置文字于星号之间*。
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+左对齐
+居个中
+右对齐
+
+
+某某某
+某某某
+某某某
+
+
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+这太丑了
+药不能
+停
+
+
+
+
+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这是一个-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">这是一个 这是一个 这是一个 这是一个 
+
+这是一个 h1这是一个 h2
+
+此文本为斜体。此文本也是。
+此文本为粗体。此文本也是
+此文本是斜体加粗体。或者这样。这个也是！
+
+此文本为删除线效果。
+
+这是第一段落. 这句话在同一个段落里，好玩么？
+现在我是第二段落。这句话也在第二段落！
+这句话在第三段落！
+
+此段落结尾有两个空格（选中以显示）。  
+上文有一个  ！
+
+
+这是一个段落引用. 你可以手动断开你的句子，然后在每句句子前面添加 “>” 字符。或者让你的句子变得很长，以至于他们自动得断开。只要你的文字以“>” 字符开头，两种方式无异。
+你也对文本进行
+
+多层引用这多机智啊！
+
+
+
+
+
+项目
+项目
+另一个项目
+
+或者
+
+项目
+项目
+另一个项目
+
+或者 
+
+项目
+项目
+最后一个项目
+
+
+
+项目一
+项目二
+项目三
+
+
+
+项目一
+项目二
+项目三
+
+
+
+
+项目一
+项目二
+项目三
+子项目
+子项目
+
+
+项目四
+
+
+
+This is code
+So is this
+
+my_array.each do |item|
+    puts item
+end
+
+John 甚至不知道 go_to() 方程是干嘛的!
+
+```ruby def foobar    puts “Hello world!”end``` 
+
+
+
+*
+
+
+
+点我点我!
+
+点我点我!
+
+去 music.
+
+点此链接以获取更多信息！看一看这个链接 如果你愿意的话.
+
+
+This is a link.
+
+
+
+
+
+
+
+
+http://testwebsite.com/ 与http://testwebsite.com/ 等同
+
+foo@bar.com
+
+我希望 将这段文字置于星号之间 但是我不希望它被斜体化, 所以我就: *这段置文字于星号之间*。
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+左对齐
+居个中
+右对齐
+
+
+某某某
+某某某
+某某某
+
+
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+这太丑了
+药不能
+停
+
+
+
+
+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这是一个-3"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">这是一个 这是一个 这是一个 
+
+这是一个 h1这是一个 h2
+
+此文本为斜体。此文本也是。
+此文本为粗体。此文本也是
+此文本是斜体加粗体。或者这样。这个也是！
+
+此文本为删除线效果。
+
+这是第一段落. 这句话在同一个段落里，好玩么？
+现在我是第二段落。这句话也在第二段落！
+这句话在第三段落！
+
+此段落结尾有两个空格（选中以显示）。  
+上文有一个  ！
+
+
+这是一个段落引用. 你可以手动断开你的句子，然后在每句句子前面添加 “>” 字符。或者让你的句子变得很长，以至于他们自动得断开。只要你的文字以“>” 字符开头，两种方式无异。
+你也对文本进行
+
+多层引用这多机智啊！
+
+
+
+
+
+项目
+项目
+另一个项目
+
+或者
+
+项目
+项目
+另一个项目
+
+或者 
+
+项目
+项目
+最后一个项目
+
+
+
+项目一
+项目二
+项目三
+
+
+
+项目一
+项目二
+项目三
+
+
+
+
+项目一
+项目二
+项目三
+子项目
+子项目
+
+
+项目四
+
+
+
+This is code
+So is this
+
+my_array.each do |item|
+    puts item
+end
+
+John 甚至不知道 go_to() 方程是干嘛的!
+
+```ruby def foobar    puts “Hello world!”end``` 
+
+
+
+*
+
+
+
+点我点我!
+
+点我点我!
+
+去 music.
+
+点此链接以获取更多信息！看一看这个链接 如果你愿意的话.
+
+
+This is a link.
+
+
+
+
+
+
+
+
+http://testwebsite.com/ 与http://testwebsite.com/ 等同
+
+foo@bar.com
+
+我希望 将这段文字置于星号之间 但是我不希望它被斜体化, 所以我就: *这段置文字于星号之间*。
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+左对齐
+居个中
+右对齐
+
+
+某某某
+某某某
+某某某
+
+
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+这太丑了
+药不能
+停
+
+
+
+
+</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这是一个-4"><span class="nav-number">2.2.2.2.1.</span> <span class="nav-text">这是一个 这是一个 
+
+这是一个 h1这是一个 h2
+
+此文本为斜体。此文本也是。
+此文本为粗体。此文本也是
+此文本是斜体加粗体。或者这样。这个也是！
+
+此文本为删除线效果。
+
+这是第一段落. 这句话在同一个段落里，好玩么？
+现在我是第二段落。这句话也在第二段落！
+这句话在第三段落！
+
+此段落结尾有两个空格（选中以显示）。  
+上文有一个  ！
+
+
+这是一个段落引用. 你可以手动断开你的句子，然后在每句句子前面添加 “>” 字符。或者让你的句子变得很长，以至于他们自动得断开。只要你的文字以“>” 字符开头，两种方式无异。
+你也对文本进行
+
+多层引用这多机智啊！
+
+
+
+
+
+项目
+项目
+另一个项目
+
+或者
+
+项目
+项目
+另一个项目
+
+或者 
+
+项目
+项目
+最后一个项目
+
+
+
+项目一
+项目二
+项目三
+
+
+
+项目一
+项目二
+项目三
+
+
+
+
+项目一
+项目二
+项目三
+子项目
+子项目
+
+
+项目四
+
+
+
+This is code
+So is this
+
+my_array.each do |item|
+    puts item
+end
+
+John 甚至不知道 go_to() 方程是干嘛的!
+
+```ruby def foobar    puts “Hello world!”end``` 
+
+
+
+*
+
+
+
+点我点我!
+
+点我点我!
+
+去 music.
+
+点此链接以获取更多信息！看一看这个链接 如果你愿意的话.
+
+
+This is a link.
+
+
+
+
+
+
+
+
+http://testwebsite.com/ 与http://testwebsite.com/ 等同
+
+foo@bar.com
+
+我希望 将这段文字置于星号之间 但是我不希望它被斜体化, 所以我就: *这段置文字于星号之间*。
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+左对齐
+居个中
+右对齐
+
+
+某某某
+某某某
+某某某
+
+
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+这太丑了
+药不能
+停
+
+
+
+
+</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.2.2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#这是一个-5"><span class="nav-number">2.2.2.2.2.1.</span> <span class="nav-text">这是一个 
+
+这是一个 h1这是一个 h2
+
+此文本为斜体。此文本也是。
+此文本为粗体。此文本也是
+此文本是斜体加粗体。或者这样。这个也是！
+
+此文本为删除线效果。
+
+这是第一段落. 这句话在同一个段落里，好玩么？
+现在我是第二段落。这句话也在第二段落！
+这句话在第三段落！
+
+此段落结尾有两个空格（选中以显示）。  
+上文有一个  ！
+
+
+这是一个段落引用. 你可以手动断开你的句子，然后在每句句子前面添加 “>” 字符。或者让你的句子变得很长，以至于他们自动得断开。只要你的文字以“>” 字符开头，两种方式无异。
+你也对文本进行
+
+多层引用这多机智啊！
+
+
+
+
+
+项目
+项目
+另一个项目
+
+或者
+
+项目
+项目
+另一个项目
+
+或者 
+
+项目
+项目
+最后一个项目
+
+
+
+项目一
+项目二
+项目三
+
+
+
+项目一
+项目二
+项目三
+
+
+
+
+项目一
+项目二
+项目三
+子项目
+子项目
+
+
+项目四
+
+
+
+This is code
+So is this
+
+my_array.each do |item|
+    puts item
+end
+
+John 甚至不知道 go_to() 方程是干嘛的!
+
+```ruby def foobar    puts “Hello world!”end``` 
+
+
+
+*
+
+
+
+点我点我!
+
+点我点我!
+
+去 music.
+
+点此链接以获取更多信息！看一看这个链接 如果你愿意的话.
+
+
+This is a link.
+
+
+
+
+
+
+
+
+http://testwebsite.com/ 与http://testwebsite.com/ 等同
+
+foo@bar.com
+
+我希望 将这段文字置于星号之间 但是我不希望它被斜体化, 所以我就: *这段置文字于星号之间*。
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+左对齐
+居个中
+右对齐
+
+
+某某某
+某某某
+某某某
+
+
+
+
+
+
+
+第一列
+第二列
+第三列
+
+
+
+
+这太丑了
+药不能
+停
+
+
+
+
+</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.2.2.2.</span> <span class="nav-text"></span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这是一个-h1"><span class="nav-number">3.</span> <span class="nav-text">这是一个 h1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这是一个-h2"><span class="nav-number">3.1.</span> <span class="nav-text">这是一个 h2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text">*</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chen Zhangpeng</span>
+</div>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"devops-life"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("fNqcWRw6CgsMm4tYJ7qlPBJY-gzGzoHsz", "EzbHjNnOH3B3ambI7Ly6bo9d");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
