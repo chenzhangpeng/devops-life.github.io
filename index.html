@@ -87,7 +87,7 @@
 <meta name="description" content="努力未必成功.但放弃必定失败">
 <meta property="og:type" content="website">
 <meta property="og:title" content="运维•开发•生活">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://devops-life.github.io/index.html">
 <meta property="og:site_name" content="运维•开发•生活">
 <meta property="og:description" content="努力未必成功.但放弃必定失败">
 <meta name="twitter:card" content="summary">
@@ -273,7 +273,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/03/mysql-delete-large-data/" itemprop="url">
+                <a class="post-title-link" href="/mysql-delete-large-data.html" itemprop="url">
                   Mysql删除大量数据
                 </a>
               
@@ -317,8 +317,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/03/mysql-delete-large-data/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/mysql-delete-large-data/" itemprop="commentsCount"></span>
+                <a href="/mysql-delete-large-data.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="mysql-delete-large-data.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -345,7 +345,7 @@
           <h1 id="mysql删除原理及用法"><a href="#mysql删除原理及用法" class="headerlink" title="mysql删除原理及用法"></a>mysql删除原理及用法</h1><p>通过终端<code>help delete</code>，查询<strong>delete</strong>的用法及注意事项</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; help delete;</span><br><span class="line">Name: &apos;DELETE&apos;</span><br><span class="line">Description:</span><br><span class="line">Syntax:</span><br><span class="line">Single-table syntax:</span><br><span class="line"></span><br><span class="line">DELETE [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name</span><br><span class="line">    [WHERE where_condition]</span><br><span class="line">    [ORDER BY ...]</span><br><span class="line">    [LIMIT row_count]</span><br><span class="line"></span><br><span class="line">Multiple-table syntax:</span><br><span class="line"></span><br><span class="line">DELETE [LOW_PRIORITY] [QUICK] [IGNORE]</span><br><span class="line">    tbl_name[.*] [, tbl_name[.*]] ...</span><br><span class="line">    FROM table_references</span><br><span class="line">    [WHERE where_condition]</span><br><span class="line"></span><br><span class="line">Or:</span><br><span class="line"></span><br><span class="line">DELETE [LOW_PRIORITY] [QUICK] [IGNORE]</span><br><span class="line">    FROM tbl_name[.*] [, tbl_name[.*]] ...</span><br><span class="line">    USING table_references</span><br><span class="line">    [WHERE where_condition]</span><br><span class="line"></span><br><span class="line">For the single-table syntax, the DELETE statement deletes rows from</span><br><span class="line">tbl_name and returns a count of the number of deleted rows. This count</span><br><span class="line">can be obtained by calling the ROW_COUNT() function (see</span><br><span class="line">http://dev.mysql.com/doc/refman/5.5/en/information-functions.html). The</span><br><span class="line">WHERE clause, if given, specifies the conditions that identify which</span><br><span class="line">rows to delete. With no WHERE clause, all rows are deleted. If the</span><br><span class="line">ORDER BY clause is specified, the rows are deleted in the order that is</span><br><span class="line">specified. The LIMIT clause places a limit on the number of rows that</span><br><span class="line">can be deleted.</span><br><span class="line"></span><br><span class="line">For the multiple-table syntax, DELETE deletes from each tbl_name the</span><br><span class="line">rows that satisfy the conditions. In this case, ORDER BY and LIMIT</span><br><span class="line">cannot be used.</span><br><span class="line"></span><br><span class="line">where_condition is an expression that evaluates to true for each row to</span><br><span class="line">be deleted. It is specified as described in</span><br><span class="line">http://dev.mysql.com/doc/refman/5.5/en/select.html.</span><br><span class="line"></span><br><span class="line">Currently, you cannot delete from a table and select from the same</span><br><span class="line">table in a subquery.</span><br><span class="line"></span><br><span class="line">You need the DELETE privilege on a table to delete rows from it. You</span><br><span class="line">need only the SELECT privilege for any columns that are only read, such</span><br><span class="line">as those named in the WHERE clause.</span><br><span class="line"></span><br><span class="line">As stated, a DELETE statement with no WHERE clause deletes all rows. A</span><br><span class="line">faster way to do this, when you do not need to know the number of</span><br><span class="line">deleted rows, is to use TRUNCATE TABLE. However, within a transaction</span><br><span class="line">or if you have a lock on the table, TRUNCATE TABLE cannot be used</span><br><span class="line">whereas DELETE can. See [HELP TRUNCATE TABLE], and [HELP LOCK].</span><br><span class="line"></span><br><span class="line">URL: http://dev.mysql.com/doc/refman/5.5/en/delete.html</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/03/mysql-delete-large-data/#more" rel="contents">
+            <a class="btn" href="/mysql-delete-large-data.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -396,7 +396,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/02/svn-standard/" itemprop="url">
+                <a class="post-title-link" href="/svn-standard.html" itemprop="url">
                   svn规范
                 </a>
               
@@ -440,8 +440,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/02/svn-standard/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/svn-standard/" itemprop="commentsCount"></span>
+                <a href="/svn-standard.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="svn-standard.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -479,7 +479,7 @@
 </ul>
 </blockquote>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/02/svn-standard/#more" rel="contents">
+            <a class="btn" href="/svn-standard.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -530,7 +530,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/02/github/" itemprop="url">
+                <a class="post-title-link" href="/github.html" itemprop="url">
                   Github
                 </a>
               
@@ -574,8 +574,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/02/github/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/github/" itemprop="commentsCount"></span>
+                <a href="/github.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="github.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -606,7 +606,7 @@
 <p>Owner 选择你的your_username<br>Repository name your_username.github.io,<strong>your_username必须与owner选择的your_username一样</strong></p>
 </blockquote>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/02/github/#more" rel="contents">
+            <a class="btn" href="/github.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -657,135 +657,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/01/hexo/" itemprop="url">
-                  hexo试用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T00:00:00+08:00" content="2016-06-01">
-              2016-06-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/01/hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/hexo/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h1><blockquote>
-<p><a href="https://hexo.io/zh-cn/">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://wowubuntu.com/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><img src="http://ww1.sinaimg.cn/large/9e2b2ccdgw1f4gnyxvz0xj20ex0ddwgy.jpg" alt=""></p>
-<blockquote>
-<p>针对hexo使用<a href="http://naotu.baidu.com/">在线脑图工具</a>画出大概思路，导出图片和makedown格式文件，图片上传到<a href="http://weibotuchuang.sinaapp.com">微博图床</a>或者<a href="https://www.qiniu.com">七牛云存储</a></p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/01/hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/01/hexo-next/" itemprop="url">
+                <a class="post-title-link" href="/hexo-next.html" itemprop="url">
                   next主题
                 </a>
               
@@ -829,8 +701,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/01/hexo-next/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/hexo-next/" itemprop="commentsCount"></span>
+                <a href="/hexo-next.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo-next.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -863,7 +735,135 @@
 <h2 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h2><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/01/hexo-next/#more" rel="contents">
+            <a class="btn" href="/hexo-next.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/hexo.html" itemprop="url">
+                  hexo试用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-01T00:00:00+08:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/建站/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/hexo.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h1><blockquote>
+<p><a href="https://hexo.io/zh-cn/">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://wowubuntu.com/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><img src="http://ww1.sinaimg.cn/large/9e2b2ccdgw1f4gnyxvz0xj20ex0ddwgy.jpg" alt=""></p>
+<blockquote>
+<p>针对hexo使用<a href="http://naotu.baidu.com/">在线脑图工具</a>画出大概思路，导出图片和makedown格式文件，图片上传到<a href="http://weibotuchuang.sinaapp.com">微博图床</a>或者<a href="https://www.qiniu.com">七牛云存储</a></p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/hexo.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1017,22 +1017,6 @@
 </div>
 
         
-
-<div class="busuanzi-count">
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人数</span>
-  
-
-  
-    <span class="site-pv">总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
-  
-  
-</div>
-
-
 
         
       </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,next," />
+  <meta name="keywords" content="svn,规范," />
 
 
 
@@ -84,24 +84,28 @@
 
 
 
-<meta name="description" content="安装NexTHexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到NexT来说，安装步骤如下。
-下载主题如果你熟悉 Git， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 git pull 来快速更新， 而不用再次下载压缩包替换。
-12cd your-hexo-sitegit clone https://github.co">
+<meta name="description" content="Svn目录规划svn目录结构如下
+
+最好是一个项目一个Svn库
+
+1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="next主题">
-<meta property="og:url" content="http://yoursite.com/2016/06/01/hexo-next/index.html">
+<meta property="og:title" content="svn规范">
+<meta property="og:url" content="http://devops-life.github.io/svn-standard.html">
 <meta property="og:site_name" content="运维•开发•生活">
-<meta property="og:description" content="安装NexTHexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到NexT来说，安装步骤如下。
-下载主题如果你熟悉 Git， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 git pull 来快速更新， 而不用再次下载压缩包替换。
-12cd your-hexo-sitegit clone https://github.co">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/9e2b2ccdgw1f4fvpv0nh4j20lf0bx74y.jpg">
-<meta property="og:updated_time" content="2016-06-02T03:28:38.000Z">
+<meta property="og:description" content="Svn目录规划svn目录结构如下
+
+最好是一个项目一个Svn库
+
+1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
+<meta property="og:updated_time" content="2016-06-02T06:28:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="next主题">
-<meta name="twitter:description" content="安装NexTHexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到NexT来说，安装步骤如下。
-下载主题如果你熟悉 Git， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 git pull 来快速更新， 而不用再次下载压缩包替换。
-12cd your-hexo-sitegit clone https://github.co">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/9e2b2ccdgw1f4fvpv0nh4j20lf0bx74y.jpg">
+<meta name="twitter:title" content="svn规范">
+<meta name="twitter:description" content="Svn目录规划svn目录结构如下
+
+最好是一个项目一个Svn库
+
+1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
 
 
 
@@ -119,7 +123,7 @@
   };
 </script>
 
-  <title> next主题 | 运维•开发•生活 </title>
+  <title> svn规范 | 运维•开发•生活 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -279,7 +283,7 @@
             
             
               
-                next主题
+                svn规范
               
             
           </h1>
@@ -291,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T00:00:00+08:00" content="2016-06-01">
-              2016-06-01
+            <time itemprop="dateCreated" datetime="2016-06-02T14:03:26+08:00" content="2016-06-02">
+              2016-06-02
             </time>
           </span>
 
@@ -305,8 +309,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
+                  <a href="/categories/svn/" itemprop="url" rel="index">
+                    <span itemprop="name">svn</span>
                   </a>
                 </span>
 
@@ -321,8 +325,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/01/hexo-next/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/hexo-next/" itemprop="commentsCount"></span>
+                <a href="/svn-standard.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="svn-standard.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,11 +337,6 @@
           
           
 
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv">阅读量
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-              </span>
           
         </div>
       </header>
@@ -350,23 +349,44 @@
       
 
       
-        <h1 id="安装NexT"><a href="#安装NexT" class="headerlink" title="安装NexT"></a>安装NexT</h1><p>Hexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下<em>配置文件</em>即可。具体到<a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT</a>来说，安装步骤如下。</p>
-<h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><p>如果你熟悉 Git， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 git pull 来快速更新， 而不用再次下载压缩包替换。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd your-hexo-site</span><br><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+        <h1 id="Svn目录规划"><a href="#Svn目录规划" class="headerlink" title="Svn目录规划"></a>Svn目录规划</h1><p>svn目录结构如下</p>
 <blockquote>
-<p>如果你对 Git 感兴趣，可以通过《Pro Git》这本书来学习。你可以访问一个<a href="http://iissnan.com/progit/" target="_blank" rel="external">在线版本（第一版)</a>]</p>
+<p>最好是一个项目一个Svn库</p>
 </blockquote>
-<h2 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h2><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件， 找到 theme 字段，并将其值更改为 next。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Svn库</span><br><span class="line">│-tags(发布)  </span><br><span class="line"></span><br><span class="line">│ │-release_1.0(copy from trunk)</span><br><span class="line"></span><br><span class="line">│ │-bugfix_release_1.0</span><br><span class="line"></span><br><span class="line">│-trunk(主版本)</span><br><span class="line"></span><br><span class="line">│ │-项目文件</span><br><span class="line"></span><br><span class="line">│-branches(分支)</span><br><span class="line"></span><br><span class="line">│ │-bugfix_1.0(copy from tags/release_1.0)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>开发完毕，代码冻结，基于已经冻结的trunk，为release_1.0打tag，trunk继续新版本开发。</li>
+<li>如果发现1.0有bug，需要修改，则基于release_1.0的tag做branch。</li>
+<li>在branch进行bugfix_1.0 bug修复，当bug修复完成基于bugfix_1.0做bugfix_release_1.0。</li>
+<li>根据需要选择性的把bugfix_1.0这个分支merge回trunk。</li>
+</ul>
+</blockquote>
 <a id="more"></a>
-<h2 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h2><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 –debug），整个命令是 hexo s –debug。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>此时即可使用浏览器访问 <a href="http://localhost:4000，检查站点是否正确运行。" target="_blank" rel="external">http://localhost:4000，检查站点是否正确运行。</a></p>
-<blockquote>
-<p>当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。这是 NexT 默认的 Scheme —— Muse</p>
-</blockquote>
-<p><img src="http://ww4.sinaimg.cn/large/9e2b2ccdgw1f4fvpv0nh4j20lf0bx74y.jpg" alt=""></p>
-<p>现在，你已经成功安装并启用了 NexT 主题。下一步我们将要更改一些主题的设定，包括个性化以及集成第三方服务。</p>
+<h1 id="Svn使用规范"><a href="#Svn使用规范" class="headerlink" title="Svn使用规范"></a>Svn使用规范</h1><h2 id="日常更新"><a href="#日常更新" class="headerlink" title="日常更新"></a>日常更新</h2><p>在Svn的日常更新中做到如下要求：</p>
+<ul>
+<li>每日进行开发工作之前必须更新代码，下班时提交代码。</li>
+<li>各员工需牢记各自的账户和密码，一定不得向他人透漏，严禁使用他人账户进行Svn各项操作</li>
+<li>每次提交<strong>必须</strong>填写注释，注释不能少于5个中文字符，注释不能毫无意义，要讲明白本次提交的问题。</li>
+<li>文件提交前必须先update代码再commit,如果遇到冲突,严禁删除原版本后直接上传新版本</li>
+<li>文件提交前必须检查是否有语法错误,php文件要使用<code>php -l [文件名]</code>通过检测</li>
+<li>提前宣布修改计划。当你计划进行修改，需要影响到SVN里的许多文件时，先通过邮件或者当面通知其他开发者<br>例如，修改底层数据库模块时，有可能影响到业务逻辑层调用数据库模块的地方。这样其他开发者会有准备，也会对修改提出意见和建议</li>
+<li><strong>原子性</strong>提交代码(即一个小功能提交一次)</li>
+<li><strong>禁止</strong>使用锁定功能</li>
+<li>SVN管理员需对SVN的所有项目定期备份</li>
+</ul>
+<h2 id="注释提交说明"><a href="#注释提交说明" class="headerlink" title="注释提交说明"></a>注释提交说明</h2><p>Svn提交注释填写标识说明：</p>
+<ul>
+<li>*表示更新功能</li>
+<li>+表示增加文件或功能</li>
+<li>-表示删除文件或功能</li>
+<li>b表示修正了具体的某个bug</li>
+</ul>
+<h1 id="在线手册"><a href="#在线手册" class="headerlink" title="在线手册"></a>在线手册</h1><ul>
+<li>服务端<a href="http://svndoc.iusesvn.com/svnbook/1.4/" target="_blank" rel="external">Subversion中文手册</a></li>
+<li>windows客户端<a href="http://svndoc.iusesvn.com/tsvn/1.5/" target="_blank" rel="external">TortoiseSVN中文手册</a></li>
+<li>Mac客户端<a href="http://www.zennaware.com/cornerstone/" target="_blank" rel="external">Cornerstone官网</a></li>
+</ul>
 
       
     </div>
@@ -404,9 +424,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/svn/" rel="tag">#svn</a>
           
-            <a href="/tags/next/" rel="tag">#next</a>
+            <a href="/tags/规范/" rel="tag">#规范</a>
           
         </div>
       
@@ -415,12 +435,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/github.html" rel="next" title="Github">
+                <i class="fa fa-chevron-left"></i> Github
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/01/hexo/" rel="prev" title="hexo试用">
-                hexo试用 <i class="fa fa-chevron-right"></i>
+              <a href="/mysql-delete-large-data.html" rel="prev" title="Mysql删除大量数据">
+                Mysql删除大量数据 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -470,8 +494,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/01/hexo-next/"
-           data-title="next主题" data-url="http://yoursite.com/2016/06/01/hexo-next/">
+      <div class="ds-thread" data-thread-key="svn-standard.html"
+           data-title="svn规范" data-url="http://devops-life.github.io/svn-standard.html">
       </div>
     
   </div>
@@ -582,7 +606,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装NexT"><span class="nav-number">1.</span> <span class="nav-text">安装NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载主题"><span class="nav-number">1.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用主题"><span class="nav-number">1.2.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证主题"><span class="nav-number">1.3.</span> <span class="nav-text">验证主题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn目录规划"><span class="nav-number">1.</span> <span class="nav-text">Svn目录规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn使用规范"><span class="nav-number">2.</span> <span class="nav-text">Svn使用规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日常更新"><span class="nav-number">2.1.</span> <span class="nav-text">日常更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释提交说明"><span class="nav-number">2.2.</span> <span class="nav-text">注释提交说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在线手册"><span class="nav-number">3.</span> <span class="nav-text">在线手册</span></a></li></ol></div>
             
           </div>
         </section>
@@ -610,22 +634,6 @@
 </div>
 
         
-
-<div class="busuanzi-count">
-
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人数</span>
-  
-
-  
-    <span class="site-pv">总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
-  
-  
-</div>
-
-
 
         
       </div>
