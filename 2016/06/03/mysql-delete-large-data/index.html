@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="svn,规范," />
+  <meta name="keywords" content="mysql delete,大数据," />
 
 
 
@@ -84,28 +84,19 @@
 
 
 
-<meta name="description" content="Svn目录规划svn目录结构如下
-
-最好是一个项目一个Svn库
-
-1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
+<meta name="description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657mysql&amp;gt; help delete;Name: &amp;apos;DELETE&amp;apos;Desc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="svn规范">
-<meta property="og:url" content="http://yoursite.com/2016/06/02/svn-standard/index.html">
+<meta property="og:title" content="Mysql删除大量数据">
+<meta property="og:url" content="http://yoursite.com/2016/06/03/mysql-delete-large-data/index.html">
 <meta property="og:site_name" content="运维•开发•生活">
-<meta property="og:description" content="Svn目录规划svn目录结构如下
-
-最好是一个项目一个Svn库
-
-1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
-<meta property="og:updated_time" content="2016-06-02T06:28:40.000Z">
+<meta property="og:description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657mysql&amp;gt; help delete;Name: &amp;apos;DELETE&amp;apos;Desc">
+<meta property="og:updated_time" content="2016-06-03T07:14:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="svn规范">
-<meta name="twitter:description" content="Svn目录规划svn目录结构如下
-
-最好是一个项目一个Svn库
-
-1234567891011121314Svn库│-tags(发布)  │ │-release_1.0(copy from trunk)│ │-bugfix_release_1.0│-trunk(主版本)│ │-项目文件│-branches(分支)│ │-bugfix_1.0(copy from tags/release_1.0)">
+<meta name="twitter:title" content="Mysql删除大量数据">
+<meta name="twitter:description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657mysql&amp;gt; help delete;Name: &amp;apos;DELETE&amp;apos;Desc">
 
 
 
@@ -123,7 +114,7 @@
   };
 </script>
 
-  <title> svn规范 | 运维•开发•生活 </title>
+  <title> Mysql删除大量数据 | 运维•开发•生活 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +267,7 @@
             
             
               
-                svn规范
+                Mysql删除大量数据
               
             
           </h1>
@@ -288,8 +279,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-02T14:03:26+08:00" content="2016-06-02">
-              2016-06-02
+            <time itemprop="dateCreated" datetime="2016-06-03T10:54:44+08:00" content="2016-06-03">
+              2016-06-03
             </time>
           </span>
 
@@ -302,8 +293,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/svn/" itemprop="url" rel="index">
-                    <span itemprop="name">svn</span>
+                  <a href="/categories/MySql/" itemprop="url" rel="index">
+                    <span itemprop="name">MySql</span>
                   </a>
                 </span>
 
@@ -318,8 +309,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/02/svn-standard/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/svn-standard/" itemprop="commentsCount"></span>
+                <a href="/2016/06/03/mysql-delete-large-data/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/03/mysql-delete-large-data/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -347,44 +338,46 @@
       
 
       
-        <h1 id="Svn目录规划"><a href="#Svn目录规划" class="headerlink" title="Svn目录规划"></a>Svn目录规划</h1><p>svn目录结构如下</p>
-<blockquote>
-<p>最好是一个项目一个Svn库</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Svn库</span><br><span class="line">│-tags(发布)  </span><br><span class="line"></span><br><span class="line">│ │-release_1.0(copy from trunk)</span><br><span class="line"></span><br><span class="line">│ │-bugfix_release_1.0</span><br><span class="line"></span><br><span class="line">│-trunk(主版本)</span><br><span class="line"></span><br><span class="line">│ │-项目文件</span><br><span class="line"></span><br><span class="line">│-branches(分支)</span><br><span class="line"></span><br><span class="line">│ │-bugfix_1.0(copy from tags/release_1.0)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>开发完毕，代码冻结，基于已经冻结的trunk，为release_1.0打tag，trunk继续新版本开发。</li>
-<li>如果发现1.0有bug，需要修改，则基于release_1.0的tag做branch。</li>
-<li>在branch进行bugfix_1.0 bug修复，当bug修复完成基于bugfix_1.0做bugfix_release_1.0。</li>
-<li>根据需要选择性的把bugfix_1.0这个分支merge回trunk。</li>
-</ul>
-</blockquote>
+        <h1 id="mysql删除原理及用法"><a href="#mysql删除原理及用法" class="headerlink" title="mysql删除原理及用法"></a>mysql删除原理及用法</h1><p>通过终端<code>help delete</code>，查询<strong>delete</strong>的用法及注意事项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; help delete;</span><br><span class="line">Name: &apos;DELETE&apos;</span><br><span class="line">Description:</span><br><span class="line">Syntax:</span><br><span class="line">Single-table syntax:</span><br><span class="line"></span><br><span class="line">DELETE [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name</span><br><span class="line">    [WHERE where_condition]</span><br><span class="line">    [ORDER BY ...]</span><br><span class="line">    [LIMIT row_count]</span><br><span class="line"></span><br><span class="line">Multiple-table syntax:</span><br><span class="line"></span><br><span class="line">DELETE [LOW_PRIORITY] [QUICK] [IGNORE]</span><br><span class="line">    tbl_name[.*] [, tbl_name[.*]] ...</span><br><span class="line">    FROM table_references</span><br><span class="line">    [WHERE where_condition]</span><br><span class="line"></span><br><span class="line">Or:</span><br><span class="line"></span><br><span class="line">DELETE [LOW_PRIORITY] [QUICK] [IGNORE]</span><br><span class="line">    FROM tbl_name[.*] [, tbl_name[.*]] ...</span><br><span class="line">    USING table_references</span><br><span class="line">    [WHERE where_condition]</span><br><span class="line"></span><br><span class="line">For the single-table syntax, the DELETE statement deletes rows from</span><br><span class="line">tbl_name and returns a count of the number of deleted rows. This count</span><br><span class="line">can be obtained by calling the ROW_COUNT() function (see</span><br><span class="line">http://dev.mysql.com/doc/refman/5.5/en/information-functions.html). The</span><br><span class="line">WHERE clause, if given, specifies the conditions that identify which</span><br><span class="line">rows to delete. With no WHERE clause, all rows are deleted. If the</span><br><span class="line">ORDER BY clause is specified, the rows are deleted in the order that is</span><br><span class="line">specified. The LIMIT clause places a limit on the number of rows that</span><br><span class="line">can be deleted.</span><br><span class="line"></span><br><span class="line">For the multiple-table syntax, DELETE deletes from each tbl_name the</span><br><span class="line">rows that satisfy the conditions. In this case, ORDER BY and LIMIT</span><br><span class="line">cannot be used.</span><br><span class="line"></span><br><span class="line">where_condition is an expression that evaluates to true for each row to</span><br><span class="line">be deleted. It is specified as described in</span><br><span class="line">http://dev.mysql.com/doc/refman/5.5/en/select.html.</span><br><span class="line"></span><br><span class="line">Currently, you cannot delete from a table and select from the same</span><br><span class="line">table in a subquery.</span><br><span class="line"></span><br><span class="line">You need the DELETE privilege on a table to delete rows from it. You</span><br><span class="line">need only the SELECT privilege for any columns that are only read, such</span><br><span class="line">as those named in the WHERE clause.</span><br><span class="line"></span><br><span class="line">As stated, a DELETE statement with no WHERE clause deletes all rows. A</span><br><span class="line">faster way to do this, when you do not need to know the number of</span><br><span class="line">deleted rows, is to use TRUNCATE TABLE. However, within a transaction</span><br><span class="line">or if you have a lock on the table, TRUNCATE TABLE cannot be used</span><br><span class="line">whereas DELETE can. See [HELP TRUNCATE TABLE], and [HELP LOCK].</span><br><span class="line"></span><br><span class="line">URL: http://dev.mysql.com/doc/refman/5.5/en/delete.html</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="Svn使用规范"><a href="#Svn使用规范" class="headerlink" title="Svn使用规范"></a>Svn使用规范</h1><h2 id="日常更新"><a href="#日常更新" class="headerlink" title="日常更新"></a>日常更新</h2><p>在Svn的日常更新中做到如下要求：</p>
+<p>DELETE 语句支持以下修饰符:</p>
+<blockquote>
 <ul>
-<li>每日进行开发工作之前必须更新代码，下班时提交代码。</li>
-<li>各员工需牢记各自的账户和密码，一定不得向他人透漏，严禁使用他人账户进行Svn各项操作</li>
-<li>每次提交<strong>必须</strong>填写注释，注释不能少于5个中文字符，注释不能毫无意义，要讲明白本次提交的问题。</li>
-<li>文件提交前必须先update代码再commit,如果遇到冲突,严禁删除原版本后直接上传新版本</li>
-<li>文件提交前必须检查是否有语法错误,php文件要使用<code>php -l [文件名]</code>通过检测</li>
-<li>提前宣布修改计划。当你计划进行修改，需要影响到SVN里的许多文件时，先通过邮件或者当面通知其他开发者<br>例如，修改底层数据库模块时，有可能影响到业务逻辑层调用数据库模块的地方。这样其他开发者会有准备，也会对修改提出意见和建议</li>
-<li><strong>原子性</strong>提交代码(即一个小功能提交一次)</li>
-<li><strong>禁止</strong>使用锁定功能</li>
-<li>SVN管理员需对SVN的所有项目定期备份</li>
+<li>LOW_PRIORITY，如果您指定LOW_PRIORITY,则DELETE的执行被延迟,直到没有其它客户端读取本表时再执行。</li>
+<li>QUICK，对于MyISAM表,如果您使用QUICK关键词,则在删除过程中,存储引擎不会合并索引端结点,这样可 以加快部分种类的删除操作的速度。</li>
+<li>IGNORE，在删除行的过程中,IGNORE关键词会使MySQL忽略所有的错误。</li>
 </ul>
-<h2 id="注释提交说明"><a href="#注释提交说明" class="headerlink" title="注释提交说明"></a>注释提交说明</h2><p>Svn提交注释填写标识说明：</p>
+</blockquote>
+<p>DELETE 注意事项</p>
+<blockquote>
 <ul>
-<li>*表示更新功能</li>
-<li>+表示增加文件或功能</li>
-<li>-表示删除文件或功能</li>
-<li>b表示修正了具体的某个bug</li>
+<li>DELETE删除数据时，如果没有加WHERE条件，则全部删除表数据，相当于<code>truncate table</code>。</li>
+<li>删除数据时调用<code>ROW_COUNT()</code>函数返回删除数据。</li>
+<li>删除时如果加入<code>ORDER BY</code>，删除顺序被指定。</li>
+<li>删除时如果加入<code>LIMIT</code>，删除数量被指定。</li>
+<li>多表删除数据时，<code>ORDER BY</code> 和 <code>LIMIT</code>不能使用。</li>
+<li>当删除表数据时，不能同时对表做子查询。</li>
+<li>删除表数据需要<code>DELETE</code>权限，如果加了<code>WHERE</code>条件，也需要<code>SELECT</code>权限。</li>
+<li>在一个事务中或者表加锁时，<code>TRUNCATE TABLE</code>不能使用但是<code>DELETE</code>能使用。</li>
 </ul>
-<h1 id="在线手册"><a href="#在线手册" class="headerlink" title="在线手册"></a>在线手册</h1><ul>
-<li>服务端<a href="http://svndoc.iusesvn.com/svnbook/1.4/" target="_blank" rel="external">Subversion中文手册</a></li>
-<li>windows客户端<a href="http://svndoc.iusesvn.com/tsvn/1.5/" target="_blank" rel="external">TortoiseSVN中文手册</a></li>
-<li>Mac客户端<a href="http://www.zennaware.com/cornerstone/" target="_blank" rel="external">Cornerstone官网</a></li>
-</ul>
+</blockquote>
+<h1 id="删除大量数据注意事项"><a href="#删除大量数据注意事项" class="headerlink" title="删除大量数据注意事项"></a>删除大量数据注意事项</h1><p>在生产环境中，删除大量数据，会消耗太多的IO资源，会造成一些不良现象主从延时、数据文件无法收缩、锁表等。做大量数据删除时，请注意以下事项：</p>
+<ol>
+<li><strong>批量删除</strong>，这样往往可以工作得更快，你可能需要在每次批量删除前sleep一段时间，控制删除的频率，这样的目的是减少对生产系统的IO冲击，把符合平均分布，避免从库滞后太多；</li>
+<li>按照<strong>主键</strong>的序列分批分批，或者基于时间分批分批。</li>
+<li>基于硬件的性能，每批删除的记录数，可以选择几百到几千到几万的数据量，但不要太大，MySQL很难同时处理好大事务和随机小事务；</li>
+<li>如果要删除大部分数据，那么可以考虑的方式是，创建一个新表，insert要保留的数据，然后切换表；</li>
+<li>对于大表(InnoDB)删除大量数据，如果是一个很大的事务，中止删除数据的操作，可能需要几倍的时间用于回滚，导致严重的IO瓶颈，而批量删除可以让我们的回滚恢复得快得多。</li>
+<li>需要留意空间的释放，选择<strong>独立表空间</strong>会更有利于释放空间。</li>
+</ol>
+<h1 id="删除实战"><a href="#删除实战" class="headerlink" title="删除实战"></a>删除实战</h1><p>通过写存储过程的方式去删除数据，附上代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line">CREATE PROCEDURE delete_large() </span><br><span class="line">BEGIN</span><br><span class="line">REPEAT</span><br><span class="line">	DELETE from legou_home_order where create_time&lt;1451577600 LIMIT 1000;</span><br><span class="line">UNTIL ROW_COUNT()=0 END REPEAT;</span><br><span class="line">END //</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+<p>通过mysql命令行执行<code>call delete_large()</code>，如果执行时间过久可以创建event执行</p>
+<p>mysql命令行查询存储过程的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show procedure status\G</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">                  Db: Db</span><br><span class="line">                Name: delete_large</span><br><span class="line">                Type: PROCEDURE</span><br><span class="line">             Definer: root@%</span><br><span class="line">            Modified: 2016-06-03 11:39:45</span><br><span class="line">             Created: 2016-06-03 11:39:45</span><br><span class="line">       Security_type: DEFINER</span><br><span class="line">             Comment: </span><br><span class="line">character_set_client: utf8</span><br><span class="line">collation_connection: utf8_general_ci</span><br><span class="line">  Database Collation: utf8_general_ci</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>查看存储过程创建语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">show create procedure delete_large\G</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">           Procedure: delete_large</span><br><span class="line">            sql_mode: </span><br><span class="line">    Create Procedure: CREATE DEFINER=`root`@`%` PROCEDURE `delete_large`()</span><br><span class="line">BEGIN</span><br><span class="line">        REPEAT</span><br><span class="line">        DELETE from legou_home_order where create_time&lt;1451577600 LIMIT 1000;</span><br><span class="line">        UNTIL ROW_COUNT()=0 END REPEAT;</span><br><span class="line">END</span><br><span class="line">character_set_client: utf8</span><br><span class="line">collation_connection: utf8_general_ci</span><br><span class="line">  Database Collation: utf8_general_ci</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -422,9 +415,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/svn/" rel="tag">#svn</a>
+            <a href="/tags/mysql-delete/" rel="tag">#mysql delete</a>
           
-            <a href="/tags/规范/" rel="tag">#规范</a>
+            <a href="/tags/大数据/" rel="tag">#大数据</a>
           
         </div>
       
@@ -433,17 +426,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/02/github/" rel="next" title="Github">
-                <i class="fa fa-chevron-left"></i> Github
+              <a href="/2016/06/02/svn-standard/" rel="next" title="svn规范">
+                <i class="fa fa-chevron-left"></i> svn规范
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/03/mysql-delete-large-data/" rel="prev" title="Mysql删除大量数据">
-                Mysql删除大量数据 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -469,8 +458,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/02/svn-standard/"
-           data-title="svn规范" data-url="http://yoursite.com/2016/06/02/svn-standard/">
+      <div class="ds-thread" data-thread-key="2016/06/03/mysql-delete-large-data/"
+           data-title="Mysql删除大量数据" data-url="http://yoursite.com/2016/06/03/mysql-delete-large-data/">
       </div>
     
   </div>
@@ -581,7 +570,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn目录规划"><span class="nav-number">1.</span> <span class="nav-text">Svn目录规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Svn使用规范"><span class="nav-number">2.</span> <span class="nav-text">Svn使用规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日常更新"><span class="nav-number">2.1.</span> <span class="nav-text">日常更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释提交说明"><span class="nav-number">2.2.</span> <span class="nav-text">注释提交说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在线手册"><span class="nav-number">3.</span> <span class="nav-text">在线手册</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql删除原理及用法"><span class="nav-number">1.</span> <span class="nav-text">mysql删除原理及用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除大量数据注意事项"><span class="nav-number">2.</span> <span class="nav-text">删除大量数据注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除实战"><span class="nav-number">3.</span> <span class="nav-text">删除实战</span></a></li></ol></div>
             
           </div>
         </section>
