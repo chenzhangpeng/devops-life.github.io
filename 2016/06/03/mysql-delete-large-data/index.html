@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="运维•开发•生活">
 <meta property="og:description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657mysql&amp;gt; help delete;Name: &amp;apos;DELETE&amp;apos;Desc">
-<meta property="og:updated_time" content="2016-06-03T07:23:03.000Z">
+<meta property="og:updated_time" content="2016-06-03T07:40:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql删除大量数据">
 <meta name="twitter:description" content="mysql删除原理及用法通过终端help delete，查询delete的用法及注意事项
@@ -210,7 +210,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="#" class="popup-trigger">
+            <a href="#" class="st-search-show-outputs">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -225,12 +225,19 @@
   
     <div class="site-search">
       
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', '1NHsuqoaW-JxQU2eXm-3','2.0.0');
+</script>
+
 
 
     </div>
@@ -354,8 +361,8 @@
 <ul>
 <li>DELETE删除数据时，如果没有加WHERE条件，则全部删除表数据，相当于<code>truncate table</code>。</li>
 <li>删除数据时调用<code>ROW_COUNT()</code>函数返回删除数据。</li>
-<li>删除时如果加入<code>ORDER BY</code>，删除顺序被指定。</li>
-<li>删除时如果加入<code>LIMIT</code>，删除数量被指定。</li>
+<li>删除时加入<code>ORDER BY</code>，则删除顺序被指定。</li>
+<li>删除时加入<code>LIMIT</code>，则删除数量被指定。</li>
 <li>多表删除数据时，<code>ORDER BY</code> 和 <code>LIMIT</code>不能使用。</li>
 <li>当删除表数据时，不能同时对表做子查询。</li>
 <li>删除表数据需要<code>DELETE</code>权限，如果加了<code>WHERE</code>条件，也需要<code>SELECT</code>权限。</li>
@@ -368,11 +375,11 @@
 <li>按照<strong>主键</strong>的序列分批分次，或者基于时间分批分次。</li>
 <li>基于硬件的性能，每批删除的记录数，可以选择几百到几千到几万的数据量，但不要太大，MySQL很难同时处理好大事务和随机小事务；</li>
 <li>如果要删除大部分数据，那么可以考虑的方式是，创建一个新表，insert要保留的数据，然后切换表；</li>
-<li>对于大表(InnoDB)删除大量数据，如果是一个很大的事务，中止删除数据的操作，可能需要几倍的时间用于回滚，导致严重的IO瓶颈，而批量删除可以让我们的回滚恢复得快得多。</li>
+<li>对于大表(InnoDB)删除大量数据，如果是一个大的事务，中止删除数据的操作可能需要几倍的时间用于回滚，这样会导致严重的IO瓶颈，而批量删除可以让我们的回滚恢复要快得多。</li>
 <li>需要留意空间的释放，选择<strong>独立表空间</strong>会更有利于释放空间。</li>
 </ol>
 <h1 id="删除实战"><a href="#删除实战" class="headerlink" title="删除实战"></a>删除实战</h1><p>通过写存储过程的方式去删除数据，附上代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line">CREATE PROCEDURE delete_large() </span><br><span class="line">BEGIN</span><br><span class="line">REPEAT</span><br><span class="line">	DELETE from legou_home_order where create_time&lt;1451577600 LIMIT 1000;</span><br><span class="line">UNTIL ROW_COUNT()=0 END REPEAT;</span><br><span class="line">END //</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line">CREATE PROCEDURE delete_large() </span><br><span class="line">BEGIN</span><br><span class="line">REPEAT</span><br><span class="line">	DELETE from legou_home_order where create_time&lt;1451577600 LIMIT 1000;</span><br><span class="line">UNTIL ROW_COUNT()=0 </span><br><span class="line">END REPEAT;</span><br><span class="line">END //</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
 <p>通过mysql命令行执行<code>call delete_large()</code>，如果执行时间过久可以创建event执行</p>
 <p>mysql命令行查询存储过程的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show procedure status\G</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">                  Db: Db</span><br><span class="line">                Name: delete_large</span><br><span class="line">                Type: PROCEDURE</span><br><span class="line">             Definer: root@%</span><br><span class="line">            Modified: 2016-06-03 11:39:45</span><br><span class="line">             Created: 2016-06-03 11:39:45</span><br><span class="line">       Security_type: DEFINER</span><br><span class="line">             Comment: </span><br><span class="line">character_set_client: utf8</span><br><span class="line">collation_connection: utf8_general_ci</span><br><span class="line">  Database Collation: utf8_general_ci</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure>
