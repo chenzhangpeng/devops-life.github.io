@@ -351,13 +351,14 @@
 
       
         
-          
-            <blockquote class="blockquote-center"><p>YAML是一个数据序列化语言，被设计成人类直接可写可读的。</p>
+          <blockquote class="blockquote-center"><p>YAML是一个数据序列化语言，被设计成人类直接可写可读的。</p>
 </blockquote>
 <p>它是JSON的严格超集，增加了语法显著换行符和缩进，就像Python。但和Python不一样， YAML根本不容许文字制表符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"># YAML中的注解看起来像这样。</span><br><span class="line"></span><br><span class="line">################</span><br><span class="line"># 标量类型 #</span><br><span class="line">################</span><br><span class="line"></span><br><span class="line"># 我们的根对象 (它们在整个文件里延续) 将会是一个地图，</span><br><span class="line"># 它等价于在别的语言里的一个字典，哈西表或对象。</span><br><span class="line">key: value</span><br><span class="line">another_key: Another value goes here.</span><br><span class="line">a_number_value: 100</span><br><span class="line">scientific_notation: 1e+12</span><br><span class="line">boolean: true</span><br><span class="line">null_value: null</span><br><span class="line">key with spaces: value</span><br><span class="line"># 注意到字符串不需要被引用。但是，它们可以被引用。</span><br><span class="line">&quot;Keys can be quoted too.&quot;: &quot;Useful if you want to put a &apos;:&apos; in your key.&quot;</span><br><span class="line"></span><br><span class="line"># 多行字符串既可以写成像一个&apos;文字块&apos;(使用 |)，</span><br><span class="line"># 或像一个&apos;折叠块&apos;(使用 &apos;&gt;&apos;)。</span><br><span class="line">literal_block: |</span><br><span class="line">    This entire block of text will be the value of the &apos;literal_block&apos; key,</span><br><span class="line">    with line breaks being preserved.</span><br><span class="line"></span><br><span class="line">    The literal continues until de-dented, and the leading indentation is</span><br><span class="line">    stripped.</span><br><span class="line"></span><br><span class="line">        Any lines that are &apos;more-indented&apos; keep the rest of their indentation -</span><br><span class="line">        these lines will be indented by 4 spaces.</span><br><span class="line">folded_style: &gt;</span><br><span class="line">    This entire block of text will be the value of &apos;folded_style&apos;, but this</span><br><span class="line">    time, all newlines will be replaced with a single space.</span><br><span class="line"></span><br><span class="line">    Blank lines, like above, are converted to a newline character.</span><br><span class="line"></span><br><span class="line">        &apos;More-indented&apos; lines keep their newlines, too -</span><br><span class="line">        this text will appear over two lines.</span><br><span class="line"></span><br><span class="line">####################</span><br><span class="line"># 集合类型 #</span><br><span class="line">####################</span><br><span class="line"></span><br><span class="line"># 嵌套是通过缩进完成的。</span><br><span class="line">a_nested_map:</span><br><span class="line">    key: value</span><br><span class="line">    another_key: Another Value</span><br><span class="line">    another_nested_map:</span><br><span class="line">        hello: hello</span><br><span class="line"></span><br><span class="line"># 地图不用有字符串键值。</span><br><span class="line">0.25: a float key</span><br><span class="line"></span><br><span class="line"># 键值也可以是多行对象，用?表明键值的开始。</span><br><span class="line">? |</span><br><span class="line">    This is a key</span><br><span class="line">    that has multiple lines</span><br><span class="line">: and this is its value</span><br><span class="line"></span><br><span class="line"># YAML也容许键值是集合类型，但是很多语言将会抱怨。</span><br><span class="line"></span><br><span class="line"># 序列 (等价于表或数组) 看起来像这样：</span><br><span class="line">a_sequence:</span><br><span class="line">    - Item 1</span><br><span class="line">    - Item 2</span><br><span class="line">    - 0.5 # 序列可以包含不同类型。</span><br><span class="line">    - Item 4</span><br><span class="line">    - key: value</span><br><span class="line">      another_key: another_value</span><br><span class="line">    -</span><br><span class="line">        - This is a sequence</span><br><span class="line">        - inside another sequence</span><br><span class="line"></span><br><span class="line"># 因为YAML是JSON的超集，你也可以写JSON风格的地图和序列：</span><br><span class="line">json_map: &#123;&quot;key&quot;: &quot;value&quot;&#125;</span><br><span class="line">json_seq: [3, 2, 1, &quot;takeoff&quot;]</span><br><span class="line"></span><br><span class="line">#######################</span><br><span class="line"># 其余的YAML特点 #</span><br><span class="line">#######################</span><br><span class="line"></span><br><span class="line"># YAML还有一个方便的特点叫&apos;锚&apos;，它让你简单地在整个文件里重复内容。</span><br><span class="line"># 两个键值将会有相同的值：</span><br><span class="line">anchored_content: &amp;anchor_name This string will appear as the value of two keys.</span><br><span class="line">other_anchor: *anchor_name</span><br><span class="line"></span><br><span class="line"># YAML还有标签，你可以用它显示地声明类型。</span><br><span class="line">explicit_string: !!str 0.5</span><br><span class="line"># 一些解析器实现特定语言的标签，就像这个为了Python的复数类型。</span><br><span class="line">python_complex_number: !!python/complex 1+2j</span><br><span class="line"></span><br><span class="line">####################</span><br><span class="line"># 其余的YAML类型 #</span><br><span class="line">####################</span><br><span class="line"></span><br><span class="line"># 字符串和数字不是仅有的YAML可以理解的标量。</span><br><span class="line"># ISO 格式的日期和日期时间文字也是可以被解析的。</span><br><span class="line">datetime: 2001-12-15T02:59:43.1Z</span><br><span class="line">datetime_with_spaces: 2001-12-14 21:59:43.10 -5</span><br><span class="line">date: 2002-12-14</span><br><span class="line"></span><br><span class="line"># 这个!!binary标签表明一个字符串实际上是一个二进制blob的base64编码表示。</span><br><span class="line">gif_file: !!binary |</span><br><span class="line">    R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5</span><br><span class="line">    OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+</span><br><span class="line">    +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC</span><br><span class="line">    AgjoEwnuNAFOhpEMTRiggcz4BNJHrv/zCFcLiwMWYNG84BwwEeECcgggoBADs=</span><br><span class="line"></span><br><span class="line"># YAML还有一个集合类型，它看起来像这样：</span><br><span class="line">set:</span><br><span class="line">    ? item1</span><br><span class="line">    ? item2</span><br><span class="line">    ? item3</span><br><span class="line"></span><br><span class="line"># 像Python一样，集合仅是有null数值的地图；上面的集合等价于：</span><br><span class="line">set2:</span><br><span class="line">    item1: null</span><br><span class="line">    item2: null</span><br><span class="line">    item3: null</span><br></pre></td></tr></table></figure>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/yaml-syntax.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -816,6 +817,143 @@
             
               
                 
+                <a class="post-title-link" href="/hexo.html" itemprop="url">
+                  hexo试用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-01T00:00:00+08:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/建站/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/hexo.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/hexo.html" class="leancloud_visitors" data-flag-title="hexo试用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h1><blockquote>
+<p><a href="https://hexo.io/zh-cn/">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://wowubuntu.com/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><img src="http://ww1.sinaimg.cn/large/9e2b2ccdgw1f4gnyxvz0xj20ex0ddwgy.jpg" alt=""></p>
+<blockquote>
+<p>针对hexo使用<a href="http://naotu.baidu.com/">在线脑图工具</a>画出大概思路，导出图片和makedown格式文件，图片上传到<a href="http://weibotuchuang.sinaapp.com">微博图床</a>或者<a href="https://www.qiniu.com">七牛云存储</a></p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/hexo.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/hexo-next.html" itemprop="url">
                   next主题
                 </a>
@@ -904,143 +1042,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/hexo-next.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/hexo.html" itemprop="url">
-                  hexo试用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T00:00:00+08:00" content="2016-06-01">
-              2016-06-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/hexo.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="hexo.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/hexo.html" class="leancloud_visitors" data-flag-title="hexo试用">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h1><blockquote>
-<p><a href="https://hexo.io/zh-cn/">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://wowubuntu.com/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><img src="http://ww1.sinaimg.cn/large/9e2b2ccdgw1f4gnyxvz0xj20ex0ddwgy.jpg" alt=""></p>
-<blockquote>
-<p>针对hexo使用<a href="http://naotu.baidu.com/">在线脑图工具</a>画出大概思路，导出图片和makedown格式文件，图片上传到<a href="http://weibotuchuang.sinaapp.com">微博图床</a>或者<a href="https://www.qiniu.com">七牛云存储</a></p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/hexo.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
